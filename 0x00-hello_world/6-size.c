@@ -6,17 +6,16 @@
  */
 int main(void)
 {
-	char chartype;
-	int intype;
-	long int longinttype;
-	long long longlongtype;
-	float floattype;
+	char a;
+	int b;
+	long int c;
+	long long d;
+	float e;
 
-	printf("Size of a char: %lu.\n", (unsigned char)sizeof(chartype));
-	printf("Size of an int: %lu.\n",  (unsigned int)sizeof(intype));
-	printf("Size of a long int: %lu.\n", (unsigned long int)(longinttype));
-	printf("Size of a long long: %lu.\n", (unsigned long long)(longlongtype));
-	printf("Size of a float: %lu.\n", (unsigned float)(floattype));
-
+	printf("Size of a char: %lu byte(s)\n", (unsigned char)sizeof(a));
+	printf("Size of an int: %lu byte(s)\n",  (unsigned int)sizeof(b));
+	printf("Size of a long int: %lu byte(s)\n", (unsigned long int)sizeof(c));
+	printf("Size of a long long: %lu byte(s)\n", (unsigned long long)sizeof(d));
+	printf("Size of a float: %lu byte(s)\n", (unsigned float)sizeof(e));
 	return (0);
 }
