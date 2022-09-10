@@ -10,7 +10,6 @@ int main(void)
 	for (free = 'a'; free <= 'z'; free++)
 	{
 		putchar(free);
-		putchar('\n');
 	}
 
 	return (0);
