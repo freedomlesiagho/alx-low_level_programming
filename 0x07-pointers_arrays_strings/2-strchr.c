@@ -17,8 +17,12 @@ char *_strchr(char *s, char c)
 		if (s[i] == c)/* if character of interest is found */
 		{
 			return (s + i); /* return address to where character is found */
-
 		}
+		if (!c)
+		{
+			return (s + i);
+		}
+
 	}
 	return ('\0');
 }
