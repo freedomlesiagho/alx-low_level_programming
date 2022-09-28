@@ -1,53 +1,57 @@
 #include "main.h"
 
 /**
- * is_prime_number - recursive prime checker.
- *
- * @n: number to check
- *
- * Return: 1 if prime, 0 if not.
+ * is_prime_number - determine if a number is a prime number
+ * @n: int number
+ * Return: 1 if prime, 0 otherwise
  */
+
 int is_prime_number(int n)
 {
-	int i;
-	/* initialize counter to first prime number */
+	int prime_number(int divider, int n);
 
-	/* cases 0, 1, and < 0 */
+	int divider = 2;
+
 	if (n < 2)
 	{
 		return (0);
 	}
-
-	i = 2;
-	/* call the helper function */
-	return (is_prime_helper(n, i));
+	if (n % n == 0 || n % 1 == 0)
+	{
+		if (prime_number(divider, n) != 0)
+		{
+			return (1);
+		}
+		else
+		{
+			return (0);
+		}
+	}
 }
 
 /**
- * is_prime_helper - recursive square prime checker
- *
- * @n: number to check (int)
- * @i: increment counter (int)
- *
- * Return: 1 if prime, 0 if not
+ * prime_number - helper function, recursive steps taken
+ * @n: number given to original function is_prime_number
+ * @divider: incrementer divisor
+ * Return: 0 if not prime, 1 if prime
  */
-int is_prime_helper(int n, int i)
+
+int prime_number(int divider, int n)
 {
-	/* if we've overshot the sqrt of n */
-	if (i * i > n)
+	if (divider < n)
 	{
-		/* then it's prime */
+		if (n % divider == 0)
+		{
+			return (0);
+		}
+		else
+		{
+			++divider;
+			return (prime_number(divider, n));
+		}
+	}
+	else
+	{
 		return (1);
 	}
-
-	/* if there is a divisor */
-	if (n % i == 0)
-	{
-		/* then it's not prime */
-		return (0);
-	}
-
-	/* check for more divisors */
-	return (is_prime_helper(n, i + 1));
-
 }
