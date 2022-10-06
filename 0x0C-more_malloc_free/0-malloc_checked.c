@@ -10,7 +10,7 @@
 
 void *malloc_checked(unsigned int b)
 {
-	void *pointer;
+	void *pointer;./* pointer is declared void so as to be able to typecast to any pointer of your choice */
 
 	pointer = malloc(b);
 	if (pointer == NULL)
