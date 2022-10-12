@@ -11,9 +11,13 @@ void array_iterator(int *array, size_t size, void (*action)(int))
 {
 	unsigned int i;
 
-	for (i = 0; i < size; i++)
+	if (array && action)
 	{
-		action(*array);/* accessing function and passing array value*/
-		array = array + 1; /* move to next element in array */
+		for (i = 0; i < size; i++)
+		{
+			action(*array);/* accessing function */
+			array = array + 1; /* move to next element in array */
+
+		}
 	}
 }
