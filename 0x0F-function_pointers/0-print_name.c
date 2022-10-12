@@ -8,6 +8,7 @@
 
 void print_name(char *name, void (*f)(char *))
 {
+	if (name != NULL && f != NULL)
 	/*
 	 * defernce pointer to access the function pointed to by it and pass
 	 * the parameter "name" to it
